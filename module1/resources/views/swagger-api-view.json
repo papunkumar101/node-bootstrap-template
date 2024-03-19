@@ -1,0 +1,77 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Module1 Project Management APIs",
+    "description": "Documentation"
+  },
+  "host": "localhost:9000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Open",
+      "description": "Endpoints"
+    },
+    {
+      "name": "User",
+      "description": "User Endpoint",
+      "summary": "Secured"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "AccessToken": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "x-access-token",
+      "description": "Please provide the valid access token, if you dont have please login and get the token as response!"
+    },
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Enter your bearer token in the format **Bearer &lt;token>**"
+    }
+  },
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/hey-hello": {
+      "get": {
+        "tags": [
+          "Open"
+        ],
+        "description": "Hello World ",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "UserLogin": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "papunmahakul1999@gmail.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "9e7c5071f8dae2cfb8dc0a0c055cd8ce"
+        },
+        "username": {
+          "type": "string",
+          "example": "Papun"
+        }
+      }
+    }
+  }
+}
