@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "C:\\Module1\\ProjectName\\Module1\\resources\\logs\\responselogs/.audit.json",
+    "files": [
+        {
+            "date": 1667548912744,
+            "name": "C:\\Module1\\ProjectName\\Module1\\resources\\logs\\responselogs\\2024-19-03-logs.log",
+            "hash": "ba75020f4d3dfb6dd59c4c7a4e374eb3"
+        },
+        {
+            "date": 1667554082944,
+            "name": "C:\\Module1\\ProjectName\\Module2\\resources\\logs\\responselogs\\2024-19-03-logs.log",
+            "hash": "24196d68bedb898ae3a5c33d3597853d"
+        }
+    ],
+    "hashType": "md5"
+}
