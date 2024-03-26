@@ -1,10 +1,10 @@
 class ModuleService{
 
-    async heyHello(req, res, next) {
+    async apiStatus(req, res, next) {
         try {
-            return res.send("success");
+            return res.json({ code: 200, data: null, message: 'success', error: null });
         } catch (error) {
-            return res.send("failed",error);
+            return res.json({ code: 400, data: null, message: 'failed', error: err });
 
         }
 

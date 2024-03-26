@@ -44,7 +44,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/hey-hello": {
+    "/v1/api-status": {
       "get": {
         "tags": [
           "Open"
