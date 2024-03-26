@@ -1,0 +1,19 @@
+{
+  "project": {
+    "host_url": "localhost:9001",
+    "port": "9001",
+    "host": "localhost:9001"
+  },  
+  "swagger_host_url": "localhost:9001",
+
+  
+  
+  
+  "mongo": {
+        "username": "",
+        "password": "",
+        "host": "localhost",
+        "db_name": "node_bootstrap_template"
+      }
+
+}
