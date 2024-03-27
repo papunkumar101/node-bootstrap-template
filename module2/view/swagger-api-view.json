@@ -14,8 +14,11 @@
     },
     {
       "name": "User",
-      "description": "User Endpoint",
-      "summary": "Secured"
+      "description": "User Endpoint"
+    },
+    {
+      "name": "CRUD",
+      "description": "CRUD Operation"
     }
   ],
   "schemes": [
@@ -27,7 +30,7 @@
       "type": "apiKey",
       "in": "header",
       "name": "x-access-token",
-      "description": "Please provide the valid access token, if you dont have please login and get the token as response!"
+      "description": "Please provide the valid access token, if you don't have please login and get the token as response!"
     },
     "Bearer": {
       "type": "apiKey",
@@ -49,8 +52,37 @@
         "tags": [
           "Open"
         ],
-        "description": "Hello World ",
+        "description": "Hello World",
         "parameters": [],
+        "responses": {}
+      }
+    },
+    "/v1/mysql-create": {
+      "post": {
+        "tags": [
+          "CRUD"
+        ],
+        "description": "Insert data in mysql database",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input_name",
+            "description": "Enter Name",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "input_name"
+              ],
+              "properties": {
+                "input_name": {
+                  "type": "string",
+                  "example": "Ram"
+                }
+              }
+            }
+          }
+        ],
         "responses": {}
       }
     }
