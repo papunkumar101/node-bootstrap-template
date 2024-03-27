@@ -31,9 +31,6 @@ class MongoConnect {
       db.once('open', () => {
         resolve('Mongodb connected!');
       });
-    }).catch(error => {
-      // Handle the rejection here
-      console.error('Error connecting to MongoDB:', error);
     });
   }
 }

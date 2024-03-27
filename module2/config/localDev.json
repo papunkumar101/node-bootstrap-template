@@ -14,6 +14,15 @@
         "password": "",
         "host": "localhost",
         "db_name": "node_bootstrap_template"
-      }
+  },
+
+  "mysql": {
+    "username": "root",
+    "password": "",
+    "host": "localhost",
+    "db_name": "node_bootstrap_template",
+    "pool_con_limit": 10
+
+}
 
 }
