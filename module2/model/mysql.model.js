@@ -1,6 +1,5 @@
-import mySql2 from '../config/mysql.connect.js';
-// let test = new MySqlSingelton(); 
-let mySql = mySql2.getInstance();
+import mySqlConnection from '../config/mysql.connect.js';
+ let mySql = mySqlConnection.getInstance();
 
 class MysqlModel {
     constructor() {
@@ -76,6 +75,27 @@ class MysqlModel {
         `;
 
         return mySql.query(query);
+    }
+
+    read() {
+        const query = `
+            SELECT * FROM names;
+        `;
+
+        return mySql.query(query);
+    }
+    update(id,name) {
+        const query = `
+            UPDATE  names SET name = '${name}' WHERE id = ${id};
+        `;
+         return mySql.query(query);
+    }
+
+    delete(id) {
+        const query = `
+            DELETE FROM names WHERE id = ${id};
+        `;
+         return mySql.query(query);
     }
 }
 

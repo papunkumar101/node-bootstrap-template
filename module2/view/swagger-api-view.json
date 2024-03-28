@@ -14,12 +14,20 @@
     },
     {
       "name": "User",
-      "description": "User Endpoint"
+      "description": "User Endpoint",
+      "summary": "Secured"
     },
     {
-      "name": "CRUD",
-      "description": "CRUD Operation"
+      "name": "MYSQL",
+      "description": "MYSQL Endpoint",
+      "summary": "Secured"
+    },
+    {
+      "name": "MONGO",
+      "description": "MONGO Endpoint",
+      "summary": "Secured"
     }
+    
   ],
   "schemes": [
     "http",
@@ -30,7 +38,7 @@
       "type": "apiKey",
       "in": "header",
       "name": "x-access-token",
-      "description": "Please provide the valid access token, if you don't have please login and get the token as response!"
+      "description": "Please provide the valid access token, if you dont have please login and get the token as response!"
     },
     "Bearer": {
       "type": "apiKey",
@@ -52,7 +60,7 @@
         "tags": [
           "Open"
         ],
-        "description": "Hello World",
+        "description": "Hello World ",
         "parameters": [],
         "responses": {}
       }
@@ -60,7 +68,7 @@
     "/v1/mysql-create": {
       "post": {
         "tags": [
-          "CRUD"
+          "MYSQL"
         ],
         "description": "Insert data in mysql database",
         "parameters": [
@@ -78,6 +86,165 @@
                 "input_name": {
                   "type": "string",
                   "example": "Ram"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/v1/mysql-read": {
+      "get": {
+        "tags": [
+          "MYSQL"
+        ],
+        "description": "read data from mysql database",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/v1/mysql-update": {
+      "put": {
+        "tags": [
+          "MYSQL"
+        ],
+        "description": "update data in mysql database",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateData",
+            "description": "Enter Update Data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["input_name","new_name"],
+              "properties": {
+                "update_id": {
+                  "type": "Integer",
+                  "example": 1
+                },
+                "new_name": {
+                  "type": "string",
+                  "example": "Ram"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/v1/mysql-delete": {
+      "delete": {
+        "tags": [
+          "MYSQL"
+        ],
+        "description": "delete data in mysql database",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "delete_id": {
+                  "type": "Integer",
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/v1/mongo-create": {
+      "post": {
+        "tags": [
+          "MONGO"
+        ],
+        "description": "create data in mongodb database",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input_name",
+            "description": "Enter Name",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "input_name"
+              ],
+              "properties": {
+                "input_name": {
+                  "type": "string",
+                  "example": "Ram"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/v1/mongo-read": {
+      "get": {
+        "tags": [
+          "MONGO"
+        ],
+        "description": "read data from mongodb database",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/v1/mongo-update": {
+      "put": {
+        "tags": [
+          "MONGO"
+        ],
+        "description": "update data in mongodb database",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateData",
+            "description": "Enter Update Data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["input_name","new_name"],
+              "properties": {
+                "update_id": {
+                  "type": "Integer",
+                  "example": 1
+                },
+                "new_name": {
+                  "type": "string",
+                  "example": "Ram"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/v1/mongo-delete": {
+      "delete": {
+        "tags": [
+          "MONGO"
+        ], 
+        "description": "delete data in mongodb database",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "delete_id": {
+                  "type": "Integer",
+                  "example": 1
                 }
               }
             }

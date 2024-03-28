@@ -19,7 +19,7 @@ transportsLogger.push(
   new transports.DailyRotateFile({
     level: process.env.ENV === 'localDev' ? 'debug' : 'info',
     datePattern: 'DD-MM-YYYY',
-    filename: 'logs/responselogs/project%DATE%.log',
+    filename: 'logs/responselogs/%DATE%-logs.log',
     handleExceptions: true,
     json: true,
     maxSize: '1g',

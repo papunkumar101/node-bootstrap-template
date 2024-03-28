@@ -1,13 +1,13 @@
-import MysqlModel from '../model/mysql.model.js';
+import MongoModel from '../model/mongo.model.js';
 
 
-class MysqlController{
+class MongoController{
     async create(req, res, next) {
         /* 	#swagger.tags = ['CRUD']
                         #swagger.description = 'create' */  
         try {
             const { input_name } =  req.body;
-            let result = await MysqlModel.create(input_name);
+            let result = await MongoModel.create(input_name);
             return res.json({ code: 200, data: result, message: 'success', error: null });
         } catch (error) {
             return res.json({ code: 400, data: null, message: 'failed', error: error });
@@ -19,7 +19,7 @@ class MysqlController{
         /* 	#swagger.tags = ['CRUD']
                         #swagger.description = 'read' */  
         try { 
-            let result = await MysqlModel.read();
+            let result = await MongoModel.read();
             return res.json({ code: 200, data: result, message: 'success', error: null });
         } catch (error) {
             return res.json({ code: 400, data: null, message: 'failed', error: error });
@@ -31,7 +31,7 @@ class MysqlController{
                         #swagger.description = 'update' */  
         try { 
             const { update_id, new_name } =  req.body;
-            let result = await MysqlModel.update(update_id, new_name);
+            let result = await MongoModel.update(update_id, new_name);
             return res.json({ code: 200, data: result, message: 'success', error: null });
         } catch (error) {
              return res.json({ code: 400, data: null, message: 'failed', error: error });
@@ -44,7 +44,7 @@ class MysqlController{
                         #swagger.description = 'delete' */  
         try { 
             const { delete_id } =  req.body;
-            let result = await MysqlModel.delete(delete_id);
+            let result = await MongoModel.delete(delete_id);
             return res.json({ code: 200, data: result, message: 'success', error: null });
         } catch (error) {
              return res.json({ code: 400, data: null, message: 'failed', error: error });
@@ -52,4 +52,4 @@ class MysqlController{
       }
 
 }
-export default new MysqlController();
+export default new MongoController();

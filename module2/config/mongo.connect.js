@@ -1,6 +1,6 @@
-import pkg from 'mongoose';
+import mongoose from 'mongoose';
 
-const { connect, connection } = pkg;
+const { connect, connection } = mongoose;
 
 class MongoConnect {
   constructor() {

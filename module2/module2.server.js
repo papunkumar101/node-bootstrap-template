@@ -43,10 +43,10 @@ const __dirname = path.resolve();
 const logDir = `${__dirname}/logs/responselogs`;
 // Stream information for log name and frequency
 const stream = fileStreamRotator.getStream({
-    filename: path.join(logDir, '%DATE%-logs.log'),
+    filename: path.join(logDir, '%DATE%-serverLogs.log'),
     frequency: 'daily',
     verbose: false,
-    datePattern: 'YYYY-MM-DD',
+    datePattern: 'DD-MM-YYYY',
     max_logs: '7d',
     size: '100M',
   });
