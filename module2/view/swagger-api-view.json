@@ -215,8 +215,8 @@
               "required": ["input_name","new_name"],
               "properties": {
                 "update_id": {
-                  "type": "Integer",
-                  "example": 1
+                  "type": "string",
+                  "example": "660c00ca3f3e7e5df7e05999"
                 },
                 "new_name": {
                   "type": "string",
@@ -243,8 +243,8 @@
               "type": "object",
               "properties": {
                 "delete_id": {
-                  "type": "Integer",
-                  "example": 1
+                  "type": "string",
+                  "example": "660c00ca3f3e7e5df7e05999"
                 }
               }
             }

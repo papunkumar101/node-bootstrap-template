@@ -53,40 +53,39 @@ class MongooseModel {
     }
 
     async create(name) {
-        console.log('name ',name);
         try {
             const newName = new this.NameModel({ name });
-            await newName.save();
-            console.log('Name created successfully');
+            return await newName.save(); 
         } catch (error) {
             console.error('Error creating Name:', error);
+            return error;
         }
     }
 
     async read() {
         try {
-            const names = await this.NameModel.find();
-            console.log('Names:', names);
+            return await this.NameModel.find(); 
         } catch (error) {
             console.error('Error reading Names:', error);
+            return error
         }
     }
 
     async update(id, name) {
         try {
-            await this.NameModel.findByIdAndUpdate(id, { name });
-            console.log('Name updated successfully');
+            return await this.NameModel.findByIdAndUpdate(id, { name });
         } catch (error) {
             console.error('Error updating Name:', error);
+            return error;
         }
     }
 
     async delete(id) {
         try {
-            await this.NameModel.findByIdAndDelete(id);
-            console.log('Name deleted successfully');
+           return await this.NameModel.findByIdAndDelete(id);
         } catch (error) {
             console.error('Error deleting Name:', error);
+            return error;
         }
     }
 }
